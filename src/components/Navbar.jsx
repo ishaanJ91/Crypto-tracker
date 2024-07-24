@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import Dashboard from './Dashboard';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -29,9 +30,8 @@ const Navbar = () => {
     { screenSize < 770 && activeMenu && <div className="overlay" onClick={() => setActiveMenu(false)}></div>}
 
     <div className="nav-container">
-      
       <div className="logo-container">
-        <h1>CryptoTrack</h1>
+        <Link to="/" element={<Dashboard/>}> <h1>CryptoTrack</h1> </Link>
         <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined style={{color: 'black'}} /></Button>
       </div>
       {activeMenu && (

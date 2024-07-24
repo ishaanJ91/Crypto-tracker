@@ -127,7 +127,8 @@ const Cryptocurrencies = ({ simplified }) => {
           </motion.div>
         ))}
       </motion.div>
-      <Pagination
+      {!simplified && (
+        <Pagination
         className='pagination'
         current={currentPage}
         total={cryptos?.length}
@@ -135,6 +136,7 @@ const Cryptocurrencies = ({ simplified }) => {
         onChange={onPageChange}
         showSizeChanger={false}
       />
+      )}
     </>
   );
 };

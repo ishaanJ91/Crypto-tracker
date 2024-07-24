@@ -29,14 +29,6 @@ const App = () => {
           </ScrollToTop>
           
         </div>
-        {/* <div className="footer">
-          <h5>CryptoTracker <br /> All rights reserved.</h5>
-          <div className="footer-links">
-            <Link to='/'>Home</Link>
-            <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
-            <Link to='/news'>News</Link>
-          </div>
-        </div> */}
       </div>
     </div>
   );
