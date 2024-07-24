@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    margin: 0;
+    font-family: Nunito;
+  }
+
+  * {
+    font-family: Nunito;
+  }
+
+  h1 {
+    font-weight: bolder;
+    color: rgb(24, 68, 157);
+    margin: 0 !important;
+
+    font-size: 2.1rem;
+    text-align: center;
+    padding: 0;
+
+  }
+
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0px 20px;
+    height: fit-content;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+    flex: 0 0 250px;
+
+  }
+  
+  
+  .logo-container {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    background: none;
+    text-align: left;
+  }
+.menu {
+    display: flex;
+    padding: 0rem 3rem;
+    gap: 3.1rem;
+}
+
+.menu a {
+    color: rgb(24, 68, 157);
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease; /* Removed padding from transition */
+    display: inline-block; 
+    padding: 0.7rem;
+    box-sizing: border-box; /* Ensures padding is included in element's total width and height */
+}
+
+.menu a:hover {
+    background-color: white;
+    border-radius: 0.7rem;
+    font-weight: 800;
+    color: #3a80e9;
+    text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+  
+    .menu.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      height: 40rem;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 45px;
+      justify-content: flex-start;
+      align-items: flex-start ;
+      gap: 0rem !important;
+    }
+
+    .menu a {
+      color: rgb(24, 68, 157);
+      font-size: 1.1rem;
+      font-weight: 700;
+      width: 100%;
+      border-radius: 0rem;
+      border-bottom: 1px solid #bfbfbf;
+      transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease; /* Removed padding from transition */
+      display: inline-block; 
+      text-align: left;
+      box-sizing: border-box; 
+      padding: 3rem 0rem;
+    }
+  }
+  

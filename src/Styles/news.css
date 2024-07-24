@@ -1,0 +1,147 @@
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-bottom: 10rem;
+  }
+  
+  .select-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .select-news {
+    width: 19rem;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .news-articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .news-card {
+    flex: 1 1 calc(33.333% - 24px);
+    min-width: calc(33.333% - 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .news-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .news-image-container {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin-bottom: 1.4rem;
+  }
+  
+  .news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .news-card:hover .news-image {
+    transform: scale(1.1);
+  }
+  
+  .news-title {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    min-height: 4rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .news-description {
+    font-size: 0.85rem !important;
+    color: #6a6a6a !important;
+    margin-top: 1rem !important;
+    flex-grow: 1;
+  }
+  
+  .news-provider {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  
+  .provider-name {
+    font-size: 14px;
+    color: #555;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0rem 0.3rem;
+  }
+  
+  .news-date {
+    font-size: 12px;
+    color: #999;
+    margin-left: auto;
+    text-align: right;
+  }
+  
+  .load-more {
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .load-more:hover {
+    background-color: #40a9ff;
+  }
+  
+
+
+  @media screen and (max-width: 1000px) {
+    .news-card {
+      flex: 1 1 calc(50% - 24px);
+      min-width: calc(50% - 20px);
+    }
+    .search-crypto {
+      margin-bottom: 2.5rem !important;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .search-crypto {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .news-card {
+      flex: 1 1 calc(100% - 24px);
+      min-width: calc(100% - 20px);
+    }
+    
+  }
+
+  

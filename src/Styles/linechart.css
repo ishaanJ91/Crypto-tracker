@@ -1,0 +1,220 @@
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    color: #0071bd;
+  }
+
+  .info-graph {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 0rem 0rem 1rem 0rem !important;
+    margin: 4rem 0rem 0rem 0rem !important;
+    border-bottom: solid 0.1px #c8daf7ec;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .info-graph p {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .price-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0rem 1rem;
+  }
+
+  .chart-title {
+    color: #0071bd !important;
+  }
+
+  .price-change {
+    font-size: 1.18rem;
+    color: #07183e;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .chart-container {
+    display: block;
+    margin: 2rem 0rem;
+    width: 100% !important;
+  }
+
+  .time-history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1.1rem !important;
+    gap: 0.3rem;
+  }
+
+  .change.history {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    background: none !important;
+  }
+
+  .positive.history:hover {
+    color: #60c96f !important;
+    text-decoration: none !important;
+  }
+
+  .negative.history:hover {
+    color: #f94241 !important;
+    text-decoration: none !important;
+  }
+
+  .price-range-info {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+
+
+  @media screen and (max-width: 800px) {
+
+    .chart-container {
+      width: 100% !important;
+    }
+
+    .info-graph {
+      padding: 0rem 0rem 0.5rem 0rem !important;
+      margin: 4rem 0rem 0rem 0rem !important;
+      border-bottom: solid 0.1px #c8daf7ec;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .time-history {
+      font-size: 1rem !important;
+      gap: 0.2rem;
+    }
+
+    .price-range-info {
+      gap: 0.4rem;
+    }
+
+    .chart-title {
+      font-size: 1.3rem !important;
+    }
+
+    .price-change {
+      font-size: 0.8rem;
+    }
+
+    .info-graph p {
+      font-size: 0.7rem !important;
+    }
+
+    .change.history {
+      font-size: 0.75rem !important;
+    }
+
+    .price-stats {
+      padding: 0rem;
+    }
+    
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+    .chart-header {
+      padding: 0rem 1rem;
+    }
+    
+    .info-graph {
+      gap: 1rem;
+      justify-content: space-between;
+      flex-wrap: wrap !important;
+    }
+  
+
+    .time-history {
+      font-size: 0.9rem !important;
+      gap: 0.2rem;
+    }
+
+    .price-range-info {
+      gap: 0.4rem;
+    }
+
+    .chart-title {
+      font-size: 1.1rem !important;
+    }
+
+    .price-change {
+      font-size: 1.1rem;
+    }
+
+    .info-graph p {
+      font-size: 0.8rem !important;
+    }
+
+    .price-stats {
+      gap: 0.8rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .change.history {
+      font-size: 0.8rem !
+    }
+
+  }
+
+
+  @media screen and (max-width: 565px) {
+
+    /* .chart-header {
+      padding: 0rem 1rem;
+    }
+    
+    .info-graph {
+      gap: 0.8rem;
+      justify-content: space-between;
+      flex-wrap: wrap !important;
+    }
+  
+
+    .time-history {
+      font-size: 0.8rem !important;
+      gap: 0.1rem;
+    }
+
+    .price-range-info {
+      gap: 0.2rem;
+    }
+
+    .chart-title {
+      font-size: 1rem !important;
+    }
+
+    .price-change {
+      font-size: 1rem;
+    }
+
+    .info-graph p {
+      font-size: 0.9rem !important;
+    }
+
+    .change.history {
+      font-size: 0.85rem !
+    
+  } */
+}
