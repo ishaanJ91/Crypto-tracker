@@ -27,7 +27,6 @@ const App = () => {
             <Route exact path='/news' element={<News />} />
           </Routes>
           </ScrollToTop>
-          
         </div>
       </div>
     </div>

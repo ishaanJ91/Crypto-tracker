@@ -243,8 +243,8 @@
       }
   
       .graph svg {
-        width: 15px !important;
-        height: 15px !important; 
+        width: 16px !important;
+        height: 16px !important; 
       }
   
       .price.details {
@@ -257,8 +257,13 @@
       .crypto-other {
         gap: 0.6rem;
       }    
+  }
 
-    
+  @media screen and (max-width: 600px) {
+    .graph svg {
+      width: 30px !important;
+      height: 30px !important; 
+    }
   }
 
 

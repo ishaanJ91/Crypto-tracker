@@ -15,7 +15,6 @@ import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/
 import Loader from './Loader';
 import LineChart from './LineChart';
 
-// Add your animations object here or import it from another file
 const animations = {
   fadeIn: {
     hidden: { opacity: 0 },
@@ -173,22 +172,39 @@ const CryptoDetails = () => {
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} timePeriod={timePeriod} cryptoDetails={cryptoDetails} />
       </motion.div>
 
-      <motion.ul
-        className="select-timeperiod-container"
-        initial="hidden"
-        animate="visible"
-        variants={animations.slideInUp}
-      >
-        {time.map((period) => (
-          <button
-            key={period}
-            className={timePeriod === period.toLowerCase() ? 'active' : ''}
-            onClick={() => setTimePeriod(period.toLowerCase())}
-          >
-            {period}
-          </button>
-        ))}
-      </motion.ul>
+      {width >= 500 ? (
+        <motion.ul
+          className="select-timeperiod-container"
+          initial="hidden"
+          animate="visible"
+          variants={animations.slideInUp}
+        >
+          {time.map((period) => (
+            <button
+              key={period}
+              className={timePeriod === period.toLowerCase() ? 'active' : ''}
+              onClick={() => setTimePeriod(period.toLowerCase())}
+            >
+              {period}
+            </button>
+          ))}
+        </motion.ul>
+      ) : (
+        <motion.select
+          className="select-timeperiod-container"
+          initial="hidden"
+          animate="visible"
+          variants={animations.slideInUp}
+          onChange={(e) => setTimePeriod(e.target.value)}
+          value={timePeriod}
+        >
+          {time.map((period) => (
+            <option key={period} value={period.toLowerCase()}>
+              {period}
+            </option>
+          ))}
+        </motion.select>
+      )}
 
       <div className="stats-container">
         <motion.div

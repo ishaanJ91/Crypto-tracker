@@ -25,23 +25,33 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
+  const handleLinkClick = () => {
+    if (screenSize < 770) {
+      setActiveMenu(false);
+    }
+  };
+
   return (
     <>
-    { screenSize < 770 && activeMenu && <div className="overlay" onClick={() => setActiveMenu(false)}></div>}
+      {screenSize < 770 && activeMenu && <div className="overlay" onClick={() => setActiveMenu(false)}></div>}
 
-    <div className="nav-container">
-      <div className="logo-container">
-        <Link to="/" element={<Dashboard/>}> <h1>CryptoTrack</h1> </Link>
-        <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined style={{color: 'black'}} /></Button>
-      </div>
-      {activeMenu && (
-        <div className={`menu ${activeMenu ? 'active' : ''}`}>
-          <Link to="/">Dashboard</Link>
-          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
-          <Link to="/news">News</Link>
+      <div className="nav-container">
+        <div className="logo-container">
+          <Link to="/" onClick={handleLinkClick}>
+            <h1>CryptoTrack</h1>
+          </Link>
+          <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}>
+            <MenuOutlined style={{ color: 'black' }} />
+          </Button>
         </div>
-      )}
-    </div>
+        {activeMenu && (
+          <div className={`menu ${activeMenu ? 'active' : ''}`}>
+            <Link to="/" onClick={handleLinkClick}>Dashboard</Link>
+            <Link to="/cryptocurrencies" onClick={handleLinkClick}>Cryptocurrencies</Link>
+            <Link to="/news" onClick={handleLinkClick}>News</Link>
+          </div>
+        )}
+      </div>
     </>
   );
 };

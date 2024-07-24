@@ -3,9 +3,19 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Filler, CategoryScale, TimeScale } from 'chart.js';
 import 'chartjs-adapter-date-fns';
 
+import { useState, useEffect } from 'react';
+
 ChartJS.register(LinearScale, TimeScale, CategoryScale, PointElement, Filler, LineElement, Tooltip);
 
 const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const coinPrice = [];
   const coinTimestamp = [];
   let totalPrice = 0;
@@ -87,7 +97,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
 
   const options = {
     scales: {
-      y: {
+      y: width < 550 ? {
+        display: false,
+      } : {
         ticks: {
           callback: (value) => `$${formatNumber(value)}`,
           font: {
