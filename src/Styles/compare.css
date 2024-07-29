@@ -1,0 +1,702 @@
+
+
+.select-crypto {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.compare-body {
+    width: 100%;
+}
+
+.custom-select-crypto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0.5rem 2rem 0.5rem;
+}
+
+select {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.9rem !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: 700;
+    border: none;
+    background: none;
+    border: 1.4px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+
+.compare-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.crypto-card-container.compare {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
+    margin: 2rem 0rem !important;
+    padding: 0rem !important;
+}
+
+.card.compare {
+    padding-top: 2rem;
+}
+
+.card.compare:hover {
+    box-shadow: none;
+    transform: none !important;
+    border: none;
+}
+
+.card-header.compare {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 0.1rem;
+    padding: 0rem 0.8rem;
+}
+
+.crypto-top-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0rem 0.3rem;
+    align-items: normal;
+}
+
+.crypto-name-compare {
+    padding: 0.5rem 0rem !important;
+    text-align: left !important;
+    margin-top: 0.7rem;
+}
+
+.crypto-card.compare {
+    min-width: 100%;
+}
+
+.card.compare {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-timeperiod {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: #929292 !important;
+    padding: 0rem 0.5rem !important;
+    margin-bottom: 0.3rem !important;
+    margin-top: 1.7rem !important;
+}
+
+
+
+.chart-container.compare {
+    padding: 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.097);
+    padding-top: 0.2rem !important;
+    margin-top: 0 !important;
+    
+}
+
+.card-body.compare {
+    justify-content: space-between !important;
+}
+
+.market-cap-compare {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: normal;
+}
+
+.market-range-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.market-range-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.market-range-info p {
+    font-size: 0.8rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.6rem;
+
+}
+
+.graph-container.compare {
+    flex-direction: column !important;
+    margin-top: 0.6rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.graph-button {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 0.2rem;
+    
+}
+
+.graph-price.compare p {
+    width: 100%;
+    text-align: right !important;
+    font-size: 1.5rem !important;
+}
+
+.more-info {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    text-decoration: none;
+    overflow: none;
+    box-shadow: none;
+    outline: none;
+
+    border: 2px solid #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.more-info:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.time-period-compare {
+    width: 100%;
+    padding: 3.5rem 1.5rem;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #f0f0f0;
+    border-radius: 17px;
+}
+
+
+.time-period-compare select {
+    width: 14rem !important;
+    background: none;
+    padding: 0.3rem 0.4rem;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    margin-bottom: 2rem;
+}
+
+.time-period-header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header-canvas h3 {
+    font-weight: 700 !important;
+    font-size: 1.45rem;
+}
+
+.canvas-legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    gap: 2rem;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.legend-color {
+    margin: 0rem 0.2rem;
+    padding: 0.4rem 1rem;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+
+    .market-range-info p {
+        font-size: 0.7rem !important;
+    }
+}
+
+
+@media screen and (max-width: 975px) {
+
+    .market-range-info p {
+        font-size: 0.6rem !important;
+    }
+}
+
+@media screen and (max-width: 875px) {
+
+    .market-range-info p {
+        margin: 0 !important;
+        font-size: 0.7rem !important;
+    }
+
+    .market-range-info {
+        margin-top: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.6rem;
+        row-gap: 0.2rem;
+        flex-wrap: wrap;
+    }
+
+    .card.compare select {
+        width: 10rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.3rem !important ;
+    }
+
+    .crypto-top-details {
+        flex-direction: column;
+    }
+
+    .crypto-name-compare {
+        padding: 0.5rem 0rem 0rem 0rem !important;
+    }
+
+    .crypto-name-compare h4 {
+        font-size: 0.9rem;
+    }
+
+    .crypto-name-compare h3 {
+        font-size: 1.2rem;
+    }
+
+    .graph-price.compare p {
+        text-align: left !important;
+        padding-left: 0rem !important;
+        font-size: 1.2rem !important;
+    }
+
+    .change p {
+        font-size: 0.8rem !important;
+
+    }
+
+
+    .change.compare {
+        font-size: 0.9rem !important;
+    }
+
+    .more-info {
+        font-size: 0.75rem;
+    }
+
+    .graph-button {
+        gap: 0rem;
+    }
+
+    .chart-timeperiod {
+        font-size: 0.7rem !important;
+    }
+
+    .header-canvas h3 {
+        font-weight: 700 !important;
+        font-size: 1.2rem;
+    }
+
+    .header-canvas p {
+        font-size: 0.8rem !important;
+    }
+
+    .canvas-legend {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+
+    .time-period-compare select {
+        width: 12rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.3rem !important ;
+        background: none;
+        padding: 0.3rem 0.4rem;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .market-range-info p {
+        margin: 0 !important;
+        font-size: 0.7rem !important;
+    }
+
+    .crypto-top-details {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+
+
+    .market-range-item {
+        margin: 0rem 0rem 0.2rem 0rem;
+
+    }
+
+    .market-range-info {
+        margin-top: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.6rem;
+        row-gap: 0.2rem;
+        flex-wrap: wrap;
+    }
+
+    .card.compare select {
+        width: 8rem !important;
+        font-size: 0.7rem !important;
+        padding: 0.3rem !important ;
+    }
+
+    .crypto-top-details {
+        flex-direction: column;
+    }
+
+    .crypto-name-compare {
+        padding: 0.5rem 0rem 0rem 0rem !important;
+    }
+
+    .crypto-name-compare h4 {
+        font-size: 1rem;
+    }
+
+    .crypto-name-compare h3 {
+        font-size: 1.2rem;
+    }
+
+    .graph-price.compare p {
+        text-align: left !important;
+        padding-left: 0rem !important;
+        font-size: 1.2rem !important;
+        padding: 0.75rem 0rem 0rem 0rem !important;
+    }
+
+
+    .change.compare {
+        font-size: 0.95rem !important;
+    }
+
+    .more-info {
+        font-size: 0.8rem;
+    }
+
+    .graph-button {
+        gap: 0rem;
+    }
+
+    .chart-timeperiod {
+        font-size: 0.6rem !important;
+    }
+
+    .header-canvas h3 {
+        font-weight: 700 !important;
+        font-size: 1rem;
+    }
+
+    .header-canvas p {
+        font-size: 0.7rem !important;
+    }
+
+    .canvas-legend {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    .time-period-compare select {
+        width: 10rem !important;
+        font-size: 0.7rem !important;
+        padding: 0.3rem !important ;
+        background: none;
+        padding: 0.3rem 0.4rem;
+    }
+}
+
+@media screen and (max-width: 675px) {
+
+    .more-info {
+        font-size: 0.65rem;
+        padding: 0.5rem 0.8rem;
+    }
+    .change.compare {
+        font-size: 0.75rem !important;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .market-range-info p {
+        margin: 0rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    .market-range-info {
+        margin-top: 2rem;
+        gap: 0.5rem;
+        row-gap: 0.3rem;
+        flex-wrap: wrap;
+    }
+
+    .market-cap-compare {
+        width: 100% !important;
+        justify-content: space-evenly !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center;
+    }
+
+
+    .compare-container {
+        flex-direction: column !important; 
+    }
+
+    .card.compare select {
+        font-size: 0.85rem !important;
+    }
+
+    .more-info {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .change.compare {
+        font-size: 1.1rem !important;
+    }
+    
+    .crypto-card-container.compare {
+        width: 100%;
+    }
+
+    .card-header.compare {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .crypto-name-compare, .graph-price.compare p {
+        margin: 0 !important;
+    }
+
+    .crypto-name-compare h4 {
+        font-size: 1.1rem;
+    }
+    .crypto-name-compare h3 {
+        font-size: 1.4rem;
+    }
+
+    .graph-price.compare p {
+        font-size: 1.4rem !important;
+    }
+
+    .card-header.compare img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .chart-container.compare canvas {
+        width: 100% !important;
+    }
+
+
+    .time-period-compare {
+        width: 90%;
+        margin: 0 auto !important; /* Center align */
+        padding: 2rem 1rem;
+    }
+
+    .canvas-legend p {
+        font-size: 0.8rem !important;
+    }
+
+    .header-canvas select {
+        width: 13rem !important;
+    }
+
+    .chart-header-compare {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .chart-container-compare canvas {
+        width: 100% !important;
+    }
+
+    .chart-timeperiod {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .crypto-name-compare h4 {
+        font-size: 0.9rem;
+    }
+    .crypto-name-compare h3 {
+        font-size: 1.2rem;
+    }
+
+    .graph-price.compare p {
+        font-size: 1.2rem !important;
+        padding-top: 0.65rem !important;
+    }
+
+    .card-header.compare img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .time-period-compare h3 {
+        font-size: 0.9rem !important;
+        width: 200px;
+        text-align: center;
+    }
+
+    .time-period-compare select {
+        width: 9.5rem !important;
+        padding: 0.2rem !important;
+    }
+
+    .canvas-legend p {
+        font-size: 0.65rem !important;
+    }
+
+
+    .legend-color {
+        width: 10px !important;
+        height: 10px !important;
+        padding: 0.3rem 0.5rem !important;
+    }
+
+    .more-info {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .change.compare {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .card-body.compare {
+        align-items: center !important;
+        justify-content: center !important; 
+    }
+
+    .card.compare select {
+        width: 8rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .market-range-info p {
+        font-size: 0.75rem !important;
+    }
+
+    .crypto-name-compare h4 {
+        font-size: 1.2rem;
+    }
+    .crypto-name-compare h3 {
+        font-size: 1.5rem;
+    }
+
+    .graph-price.compare p {
+        font-size: 1.4rem !important;
+        padding-top: 0.65rem !important;
+    }
+
+    .card-header.compare {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+
+    .crypto-top-details {
+        flex-direction: column !important;
+        padding-left: 0.2rem !important;
+
+    }
+
+    .button-container {
+        flex-direction: column !important; 
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+
+    .more-info {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .change.compare {
+        font-size: 1.1rem !important;
+    }
+    
+}
+

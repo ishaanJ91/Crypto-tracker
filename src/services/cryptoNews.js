@@ -1,21 +1,21 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const baseUrl = 'https://newsapi.org/v2';
-const apiKey = 'a0ed58c4cdcf43539b862fde4757b9e6';
+const cryptoNewsHeader = {
+  'x-rapidapi-key': 'f952352d83mshe0240ff059a3acap17d841jsn18213f669917',
+  'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
+};
 
 const createRequest = (url) => ({
   url,
-  headers: {
-    'Authorization': `Bearer ${apiKey}`
-  }
+  headers: cryptoNewsHeader,
 });
 
 export const cryptoNewsApi = createApi({
   reducerPath: 'cryptoNewsApi',
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://real-time-finance-data.p.rapidapi.com' }),
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
-      query: ({ query, pageSize }) => createRequest(`/everything?q=${query}&pageSize=${pageSize}`),
+      query: (count) => createRequest(`/stock-news?count=${count}`),
     }),
   }),
 });

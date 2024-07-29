@@ -13,7 +13,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [cryptosPerPage] = useState(10); // Number of cryptocurrencies per page
+  const [cryptosPerPage] = useState(10); 
 
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((item) =>

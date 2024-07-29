@@ -7,9 +7,10 @@ import './Styles/currency.css'
 import './Styles/dashboard.css'
 import './Styles/news.css'
 import './Styles/cryptodetails.css'
+import './Styles/compare.css'
 import './Styles/linechart.css'
 
-import { Navbar, Dashboard, CryptoDetails, Cryptocurrencies, News, ScrollToTop } from './components';
+import { Navbar, Dashboard, CryptoDetails, Cryptocurrencies, News, Compare ,ScrollToTop } from './components';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             <Route exact path='/cryptocurrencies' element={<Cryptocurrencies />} />
             <Route exact path='/crypto/:coinId' element={<CryptoDetails />} />
             <Route exact path='/news' element={<News />} />
+            <Route exact path='/compare' element={<Compare />} />
           </Routes>
           </ScrollToTop>
         </div>

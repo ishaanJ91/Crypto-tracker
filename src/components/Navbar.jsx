@@ -48,6 +48,7 @@ const Navbar = () => {
           <div className={`menu ${activeMenu ? 'active' : ''}`}>
             <Link to="/" onClick={handleLinkClick}>Dashboard</Link>
             <Link to="/cryptocurrencies" onClick={handleLinkClick}>Cryptocurrencies</Link>
+            <Link to="/compare" onClick={handleLinkClick}>Compare</Link>
             <Link to="/news" onClick={handleLinkClick}>News</Link>
           </div>
         )}
