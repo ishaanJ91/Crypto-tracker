@@ -158,16 +158,16 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
         padding: {
           top: 10,
           bottom: 10,
-          left: 30,
-          right: 30,
+          left: 10,
+          right: 10,
         },
         titleFont: {
-          size: 17,
+          size: 13,
           weight: 700,
           family: 'Nunito, sans-serif',
         },
         bodyFont: {
-          size: 14,
+          size: 9,
           weight: 'normal',
           family: 'Nunito, sans-serif',
         },
@@ -185,7 +185,7 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
       },
     },
     
-    interaction: {
+    interaction: { 
       mode: 'index',
       intersect: false,
     },

@@ -2,25 +2,27 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { useGetCryptoNewsQuery } from "../services/cryptoNews";
+import { useGetCryptosQuery } from '../services/cryptoAPI';
 import Loader from './Loader';
 import { SearchOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 
 const News = ({ simplified }) => {
   const [pageSize, setPageSize] = useState(simplified ? 6 : 18);
-  const { data: cryptoNews, error, refetch } = useGetCryptoNewsQuery(pageSize);
+  const { data } = useGetCryptosQuery(100);
+  const [newsCategory, setNewsCategory] = useState('cryptocurrency');
+  const { data: cryptoNews, error, refetch } = useGetCryptoNewsQuery({ query: newsCategory, count: pageSize });
   const [searchTerm, setSearchTerm] = useState('');
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    refetch(pageSize);
-  }, [pageSize, refetch]);
+    refetch({ query: newsCategory, count: pageSize });
+  }, [pageSize, newsCategory, refetch]);
 
   if (!cryptoNews) return <Loader />;
-  if (error) return <p>Error loading news...</p>;
 
-  const sortedArticles = cryptoNews?.results?.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate)) || [];
+  const sortedArticles = [...cryptoNews.articles].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 
   const loadMore = () => {
     if (simplified) {
@@ -30,9 +32,9 @@ const News = ({ simplified }) => {
     }
   };
 
-  const filteredArticles = sortedArticles.filter(article =>
-    article.article_title.toLowerCase().includes(searchTerm) ||
-    (article.article_description && article.article_description.toLowerCase().includes(searchTerm))
+  const filteredArticles = sortedArticles.filter(article => 
+    article.title.toLowerCase().includes(searchTerm) ||
+    article.description.toLowerCase().includes(searchTerm)
   );
 
   const animations = {
@@ -43,6 +45,14 @@ const News = ({ simplified }) => {
     slideInUp: {
       hidden: { opacity: 0, y: 50 },
       visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    },
+    slideInLeft: {
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    },
+    slideInRight: {
+      hidden: { opacity: 0, x: 50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
     },
   };
 
@@ -83,18 +93,18 @@ const News = ({ simplified }) => {
               animate="visible"
               variants={animations.slideInUp}
             >
-              <a href={news.article_url} target="_blank" rel="noreferrer">
+              <a href={news.url} target="_blank" rel="noreferrer">
                 <div className="news-image-container">
                   <img
                     className="news-image"
-                    src={news.article_photo_url || 'https://variety.com/wp-content/uploads/2021/12/Bitcoin-Cryptocurrency-Placeholder.jpg'}
+                    src={news.urlToImage || 'https://variety.com/wp-content/uploads/2021/12/Bitcoin-Cryptocurrency-Placeholder.jpg'}
                     alt="news"
                   />
                 </div>
-                <h4 className="news-title">{news.article_title}</h4>
+                <h4 className="news-title">{news.title}</h4>
                 <div className="news-provider">
-                  <span className="provider-name">{news.source}</span>
-                  <span className="news-date">{moment(news.post_time_utc).startOf('ss').fromNow()}</span>
+                  <span className="provider-name">{news.source.name}</span>
+                  <span className="news-date">{moment(news.publishedAt).startOf('ss').fromNow()}</span>
                 </div>
               </a>
             </motion.div>
