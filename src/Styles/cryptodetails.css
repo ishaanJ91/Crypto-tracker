@@ -22,6 +22,10 @@
     gap: 0rem !important;
   }
 
+  .card.details:hover {
+    transform: scale(1);
+  }
+
   .crypto-name-container {
     display: flex;
     flex-direction: row;

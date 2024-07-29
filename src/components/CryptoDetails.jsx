@@ -92,7 +92,7 @@ const CryptoDetails = () => {
         >
           <motion.div className="crypto-card" key={cryptoDetails?.uuid}>
             <Link to={`/crypto/${cryptoDetails?.uuid}`}>
-              <div className={`card ${cryptoDetails?.change < 0 ? 'negative' : 'positive'}`}>
+              <div className={`card details ${cryptoDetails?.change < 0 ? 'negative' : 'positive'}`}>
                 <div className="card-header">
                   <img className="crypto-image" src={cryptoDetails?.iconUrl} style={{width: '60px', height: '60px'}} alt={cryptoDetails?.name} />
                   <div className='crypto-name'>

@@ -80,6 +80,8 @@ select {
     align-items: normal;
 }
 
+
+
 .crypto-name-compare {
     padding: 0.5rem 0rem !important;
     text-align: left !important;
@@ -697,10 +699,6 @@ select {
 
     .change.compare {
         font-size: 0.9rem !important;
-    }
-
-    .chart-container-compare, canvas {
-        height: 10vh !important;
     }
 
     .header-canvas {
