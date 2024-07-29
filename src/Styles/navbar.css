@@ -117,3 +117,20 @@ body {
     }
   }
   
+
+
+@media screen and (max-width: 900px) {
+  .menu a {
+    font-size: 0.9rem !important;
+  }
+
+  .menu {
+    padding-right: 0 !important;
+    gap: 1.8rem !important;
+  
+  }
+
+  .nav-container h1 {
+    font-size: 1.8rem;
+  }
+}

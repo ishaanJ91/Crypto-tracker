@@ -2,26 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Filler, CategoryScale, TimeScale } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import { useRef } from 'react';
 
 ChartJS.register(LinearScale, TimeScale, CategoryScale, PointElement, Filler, LineElement, Tooltip);
 
 const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timePeriod }) => {
   const [width, setWidth] = useState(window.innerWidth);
-  const chartRef = useRef(null);
-
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    if (chartRef.current) {
-      chartRef.current.destroy();
-    }
-  }, [width, coinHistory1, coinHistory2]); 
 
   const processData = (coinHistory1, coinHistory2) => {
     const coinPrice1 = [];
@@ -55,27 +46,23 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
   };
 
   const timeUnit = {
-    '24h': 'day',
+    '24h': 'hour',
     '7d': 'day',
-    '30d': 'week',
+    '30d': 'day',
     '3m': 'month',
     '1y': 'month',
     '5y': 'year',
+    'All': 'year',
   }[timePeriod] || 'day';
-
 
   const timeDisplayFormats = {
     hour: {
       hour: 'HH:mm',
-      tooltipFormat: 'dd MMM yyyy HH:mm'
+      tooltipFormat: 'MMM dd, yyyy HH:mm'
     },
     day: {
       day: 'MMM dd',
       tooltipFormat: 'MMM dd, yyyy'
-    },
-    week :{
-      day: 'MMM dd',
-      tooltipFormat: 'MMM dd'
     },
     month: {
       month: 'MMM',
@@ -99,7 +86,7 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
         borderWidth: 3,
         tension: 0.4,
         pointRadius: 0,
-        pointHoverRadius: 5,
+        pointHoverRadius: 4,
         pointBackgroundColor: '#000',
         pointBorderColor: '#2d7aff',
       },
@@ -112,7 +99,7 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
         borderWidth: 3,
         tension: 0.4,
         pointRadius: 0,
-        pointHoverRadius: 5,
+        pointHoverRadius: 4,
         pointBackgroundColor: '#000',
         pointBorderColor: '#767587',
       },
@@ -122,12 +109,25 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
   const options = {
     scales: {
       y: {
-        display: false,
+        type: 'linear',
+        display: true,
+        position: 'left',
         ticks: {
           font: {
             size: 12,
             weight: '500',
           },
+        },
+        grid: {
+          color: 'rgba(200, 200, 200, 0.4)',
+        },
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        grid: {
+          drawOnChartArea: false,
         },
       },
       x: {
@@ -136,75 +136,87 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
         grid: {
           display: false,
         },
-        ticks: {
-          autoSkip: false,
-          maxRotation: 0,
-          minRotation: 0,
-          font: {
-            size: 10.5,
-          }
-        }
+        time: {
+          unit: timeUnit,
+          displayFormats: timeDisplayFormats[timeUnit],
+          tooltipFormat: timeDisplayFormats[timeUnit].tooltipFormat,
+        },
       },
     },
     plugins: {
       tooltip: {
         enabled: true,
-        caretPadding: 10,
-        yAlign: 'top',
+        caretSize: 7,
+        caretPadding: 20,
         backgroundColor: '#000',
         titleColor: '#fff',
         bodyColor: '#fff',
         borderColor: '#000',
-        borderWidth: 0.5,
-        alignItems: 'center',
+        borderWidth: 1.2,
         titleAlign: 'center',
-        footerAlign: 'center',
         bodyAlign: 'center',
-        fontFamily: 'Monsterrat',
+        padding: {
+          top: 10,
+          bottom: 10,
+          left: 30,
+          right: 30,
+        },
         titleFont: {
-          size: 13,
+          size: 17,
           weight: 700,
-          color: '#3b567f',
           family: 'Nunito, sans-serif',
         },
         bodyFont: {
-          size: 9,
+          size: 14,
           weight: 'normal',
-          color: '#000',
           family: 'Nunito, sans-serif',
         },
         callbacks: {
-          label: () => '',
-          title: (context) => `$${formatNumber(context[0].raw.toFixed(2))}`,
-          beforeBody: (context) => {
+          label: (context) => `${context.dataset.label}: $${formatNumber(context.raw.toFixed(2))}`,
+          title: (context) => {
             const date = new Date(context[0].parsed.x);
             return date.toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
           },
         },
-        displayColors: false,
       },
       legend: {
-        display: false,
+        display: true,
+        position: 'top',
       },
     },
+    
     interaction: {
       mode: 'index',
       intersect: false,
     },
     hover: {
       mode: 'index',
-      intersect: true,
+      intersect: false,
+      onHover: (event, chartElement) => {
+        const chart = chartElement?.[0]?.element;
+        if (chart) {
+          const { chartArea, ctx } = chart.chart;
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(chart.x, chartArea.top);
+          ctx.lineTo(chart.x, chartArea.bottom);
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = '#000';
+          ctx.stroke();
+          ctx.restore();
+        }
+      },
     },
     animation: {
       onComplete: function () {
         const chart = this;
         const ctx = chart.ctx;
-        const activePoints = chart.tooltip && chart.tooltip._active;
+        const activePoints = chart.tooltip?._active;
         if (activePoints && activePoints.length) {
           activePoints.forEach(function (point) {
             const x = point.element.x;
             const y = point.element.y;
-            const radius = 5;
+            const radius = 4;
             ctx.save();
             ctx.beginPath();
             ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
@@ -216,7 +228,6 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
       },
     },
   };
-  
 
   if (!coinPrice1.length || !coinTimestamp1.length || !coinPrice2.length || !coinTimestamp2.length) {
     return <div>No data available to display the chart</div>;
@@ -224,7 +235,7 @@ const LineChartComp = ({ coinHistory1, coinHistory2, coinName1, coinName2, timeP
 
   return (
     <>
-      <div className="chart-header-compare" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="chart-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Line className='chart-container-compare' data={data} options={options} />
       </div>
     </>

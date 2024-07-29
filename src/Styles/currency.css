@@ -205,7 +205,8 @@ p {
   }
 
   .crypto-card {
-      min-width: calc(100% - 3rem) !important;
+
+      min-width: 100% !important;
       justify-content: center !important;
       align-items: center !important;
       text-align: center !important;

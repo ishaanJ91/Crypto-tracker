@@ -301,6 +301,8 @@ select {
         width: 10rem !important;
         font-size: 0.8rem !important;
         padding: 0.3rem !important ;
+        margin-top: 0 !important;
+        margin-bottom: 1.1rem !important;
     }
 
     .crypto-top-details {
@@ -564,7 +566,6 @@ select {
 
 
     .time-period-compare {
-        width: 90%;
         margin: 0 auto !important; /* Center align */
         padding: 2rem 1rem;
     }
@@ -656,46 +657,60 @@ select {
     }
 
     .market-range-info p {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
     }
 
     .crypto-name-compare h4 {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
+
     .crypto-name-compare h3 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .card-header.compare img {
+        width: 40px !important;
+        height: 40px !important;
+        margin-top: 0.4rem;
     }
 
     .graph-price.compare p {
-        font-size: 1.4rem !important;
+        font-size: 1.1rem !important;
         padding-top: 0.65rem !important;
     }
 
     .card-header.compare {
-        flex-direction: column;
         justify-content: flex-start !important;
         align-items: flex-start !important;
+        gap: 0.5rem;
     }
 
     .crypto-top-details {
-        flex-direction: column !important;
         padding-left: 0.2rem !important;
 
     }
 
-    .button-container {
-        flex-direction: column !important; 
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-    }
-
     .more-info {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         padding: 0.6rem 1rem;
     }
 
     .change.compare {
-        font-size: 1.1rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .chart-container-compare, canvas {
+        height: 10vh !important;
+    }
+
+    .header-canvas {
+        gap: 0.7rem;
+    }
+
+    .header-canvas select {
+        margin-bottom: 0;
+        width: 8rem !important;
+        margin-top: 0 !important;
     }
     
 }
