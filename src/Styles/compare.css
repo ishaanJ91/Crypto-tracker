@@ -571,6 +571,8 @@ select {
     .time-period-compare {
         margin: 0 auto !important; /* Center align */
         padding: 2rem 1rem;
+        margin-bottom: 5rem !important;
+
     }
 
     .canvas-legend p {
@@ -612,6 +614,10 @@ select {
     .card-header.compare img {
         width: 45px !important;
         height: 45px !important;
+    }
+
+    .time-period-compare {
+        margin-bottom: 5rem !important;
     }
 
     .time-period-compare h3 {
@@ -711,6 +717,8 @@ select {
         width: 8rem !important;
         margin-top: 0 !important;
     }
+
+    
     
 }
 
