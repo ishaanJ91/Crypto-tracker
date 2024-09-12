@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const cryptoApiHeaders = {
-  'x-access-token': 'coinranking92a1fe6775ffcff15a80311d0fd8d2c2d1da46d6caf4cd04',
+  'x-access-token': 'YOUR_API_KEY',
 };
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
