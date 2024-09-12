@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# 🚀 Crypto Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Crypto Tracker is a web application that allows users to view cryptocurrency details, compare different cryptocurrencies, and track their historical data. The application uses two APIs to fetch data:
 
-## Available Scripts
+1. **CoinRanking API**: For retrieving cryptocurrency details and historical data.
+2. **NewsAPI**: For fetching the latest news related to cryptocurrencies (please note that this feature requires a paid plan, so it may not work on the hosted version. A screenshot demonstrating this functionality is provided).
 
-In the project directory, you can run:
+You can explore the project [here](https://ishaanj91.github.io/Crypto-tracker/).
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📑 Table of Contents
+- [📃 Project Overview](#project-overview)
+- [🔗 APIs Used](#apis-used)
+  - [🔍 CoinRanking API](#coinranking-api)
+  - [📰 NewsAPI](#newsapi)
+- [🌟 Features](#features)
+- [⚙️ Installation](#installation)
+- [💻 Usage](#usage)
+- [📸 Screenshots](#screenshots)
+- [🤝 Contributing](#contributing)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📃 Project Overview
 
-### `npm run build`
+Crypto Tracker provides a comprehensive view of the cryptocurrency market. Users can:
+- **View Data History**: Track the historical price data of any cryptocurrency.
+- **Compare Cryptocurrencies**: Compare the performance of multiple cryptocurrencies side-by-side.
+- **See Graphs**: Visualize cryptocurrency data with interactive charts.
+- **View Top 100 Cryptocurrencies**: Get a list of the top 100 cryptocurrencies by market cap.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔗 APIs Used
 
-### `npm run eject`
+### CoinRanking API
+The CoinRanking API is used to fetch:
+- **Cryptocurrency Details**: Information about different cryptocurrencies.
+- **Historical Data**: Price history for cryptocurrencies over time.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**API Details:**
+- **Endpoint:** `/coin/{coin_id}/history`
+- **API Documentation:** [CoinRanking API](https://coinranking.com/api)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### NewsAPI
+The NewsAPI is used to fetch the latest news articles related to cryptocurrencies. This feature requires a paid plan, so it might not work on the hosted version. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**API Details:**
+- **Endpoint:** `/v2/everything?q=cryptocurrency`
+- **API Documentation:** [NewsAPI](https://newsapi.org/docs/endpoints/everything)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+## 🌟 Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Data History**: View historical price data for a selected cryptocurrency.
+- **Comparison**: Compare the prices and performance of different cryptocurrencies.
+- **Graphs**: Visualize historical data with interactive charts.
+- **Top 100 Cryptos**: Display a list of the top 100 cryptocurrencies by market capitalization.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+## ⚙️ Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run this project locally, follow these steps:
 
-### Analyzing the Bundle Size
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/crypto-tracker.git
+   cd crypto-tracker
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory and add your API keys:
+   ```env
+   COINRANKING_API_KEY=your_coinranking_api_key
+   NEWS_API_KEY=your_news_api_key
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Run the application**:
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 💻 Usage
 
-### Deployment
+1. Open the application in your browser:
+   ```bash
+   http://localhost:3000
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Use the interface to:
+   - View historical data by selecting a cryptocurrency.
+   - Compare cryptocurrencies by adding them to the comparison view.
+   - View graphs and historical data charts.
+   - Check out the top 100 cryptocurrencies.
 
-### `npm run build` fails to minify
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here are some screenshots demonstrating the functionality of the NewsAPI (which may not work on the hosted site due to API restrictions):
+
+![News API Screenshot](path/to/newsapi_screenshot.png)
+
+<br>
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have suggestions or improvements, please feel free to:
+- Open an issue
+- Submit a pull request
+
+Thank you for checking out Crypto Tracker!
