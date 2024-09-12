@@ -10,7 +10,7 @@ import './Styles/cryptodetails.css'
 import './Styles/compare.css'
 import './Styles/linechart.css'
 
-import { Navbar, Dashboard, CryptoDetails, Cryptocurrencies, News, Compare ,ScrollToTop } from './components';
+import { Navbar, Dashboard, CryptoDetails, Cryptocurrencies, News, Compare, ScrollToTop } from './components';
 
 const App = () => {
   return (
