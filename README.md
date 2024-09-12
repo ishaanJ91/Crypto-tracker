@@ -17,7 +17,6 @@ You can explore the project [here](https://ishaanj91.github.io/Crypto-tracker/).
 - [🌟 Features](#features)
 - [⚙️ Installation](#installation)
 - [💻 Usage](#usage)
-- [📸 Screenshots](#screenshots)
 - [🤝 Contributing](#contributing)
 
 
@@ -46,7 +45,7 @@ The CoinRanking API is used to fetch:
 - **API Documentation:** [CoinRanking API](https://coinranking.com/api)
 
 ### NewsAPI
-The NewsAPI is used to fetch the latest news articles related to cryptocurrencies. This feature requires a paid plan, so it might not work on the hosted version. 
+The NewsAPI is used to fetch the latest news articles related to cryptocurrencies. This feature requires a paid plan, so it does not work on the hosted version.
 
 **API Details:**
 - **Endpoint:** `/v2/everything?q=cryptocurrency`
@@ -104,12 +103,6 @@ To run this project locally, follow these steps:
    - Compare cryptocurrencies by adding them to the comparison view.
    - View graphs and historical data charts.
    - Check out the top 100 cryptocurrencies.
-
-## 📸 Screenshots
-
-Here are some screenshots demonstrating the functionality of the NewsAPI (which may not work on the hosted site due to API restrictions):
-
-![News API Screenshot](path/to/newsapi_screenshot.png)
 
 <br>
 
