@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseUrl = 'https://newsapi.org/v2';
-const apiKey = 'YOUT_API_KEY';
+const apiKey = 'a0ed58c4cdcf43539b862fde4757b9e6';
 
 const createRequest = (url) => ({
   url,
