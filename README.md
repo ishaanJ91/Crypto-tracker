@@ -1,4 +1,4 @@
-# 🚀 Crypto Tracker
+# 🚀 [Crypto Tracker](https://ishaanj91.github.io/Crypto-tracker/)
 
 Crypto Tracker is a web application that allows users to view cryptocurrency details, compare different cryptocurrencies, and track their historical data. The application uses two APIs to fetch data:
 
